@@ -5,7 +5,7 @@ This project provides a backend API solution that streamlines the onboarding pro
 ### Setup Instructions
 1. Clone the project.
 2. Set up a local PostgreSQL database.
-3. Update the 'AppDbConnection' value in the `appsettings` file.
+3. Update the `AppDbConnection` value in the `appsettings` file.
 4. Run `dotnet ef database update` to populate the database with tables.
 5. Run the project using your preferred IDE or execute the `dotnet run` command in the terminal.
 
