@@ -73,7 +73,7 @@ namespace CustomerManagementAPI.Services
 
             if (filterDTO.SubCounty != null)
             {
-                locations = locations.Where(x => x.County.ToLower() == filterDTO.SubCounty.ToLower());
+                locations = locations.Where(x => x.SubCounty.ToLower() == filterDTO.SubCounty.ToLower());
             }
 
             if (filterDTO.Ward != null)

@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace CustomerManagementAPI.Controllers
 {
 	[ApiController]
-	[Route("api/[controller]")]
+	[Route("api/business_categories")]
     public class BusinessCategoriesController : Controller
 	{
 		private readonly IBusinessCategoryService _businessCategoryService;

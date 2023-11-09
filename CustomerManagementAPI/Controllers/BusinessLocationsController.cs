@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace CustomerManagementAPI.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/business_locations")]
     public class BusinessLocationsController : Controller
     {
         private readonly IBusinessLocationService _businessLocationService;
