@@ -28,7 +28,7 @@ namespace CustomerManagementAPI.Controllers
         }
 
         [HttpGet("filter")]
-        public IActionResult FilterLocationsAsync([FromQuery] BusinessLocationFilterDTO filter)
+        public IActionResult FilterLocations([FromQuery] BusinessLocationFilterDTO filter)
         {
             if(filter is null)
             {

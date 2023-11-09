@@ -40,6 +40,40 @@ namespace CustomerManagementAPI.Services
             return true;
         }
 
+        public List<BusinessReadDTO> FilterBusinesses(BusinessFilterDTO dto)
+        {
+            var businesses = _applicationDContext.Businesses
+                .Include(x => x.Location)
+                .Where(x => x.DateDeleted == null);
+
+            if (dto.County != null)
+            {
+                businesses = businesses.Where(x => x.Location.County.ToLower() == dto.County.ToLower());
+            }
+
+            if (dto.SubCounty != null)
+            {
+                businesses = businesses.Where(x => x.Location.SubCounty.ToLower() == dto.SubCounty.ToLower());
+            }
+
+            if (dto.Ward != null)
+            {
+                businesses = businesses.Where(x => x.Location.Ward.ToLower() == dto.Ward.ToLower());
+            }
+
+            if(dto.CategoryId != null)
+            {
+                businesses = businesses.Where(x => x.CategoryId == dto.CategoryId);
+            }
+
+            if (dto.OwnerId != null)
+            {
+                businesses = businesses.Where(x => x.OwnerId == dto.OwnerId);
+            }
+
+            return businesses.Select(x => new BusinessReadDTO(x)).ToList();
+        }
+
         public async Task<List<BusinessReadDTO>> GetAllBusinesses()
         {
             var businesses = await _applicationDContext.Businesses

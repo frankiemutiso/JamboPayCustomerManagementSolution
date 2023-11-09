@@ -10,6 +10,7 @@ namespace CustomerManagementAPI.Services
         Task CreateBusiness(BusinessCreateDTO dto);
         Task<BusinessReadDTO?> UpdateBusiness(int id, BusinessUpdateDTO dto);
         Task<bool?> DeleteBusiness(int id);
+        List<BusinessReadDTO> FilterBusinesses(BusinessFilterDTO dto);
     }
 }
 

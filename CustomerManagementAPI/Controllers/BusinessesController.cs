@@ -28,6 +28,20 @@ namespace CustomerManagementAPI.Controllers
             return Ok(businesses);
         }
 
+        [HttpGet("filter")]
+        [ProducesResponseType(200)]
+        public IActionResult FilterBusinesses([FromQuery] BusinessFilterDTO filterDTO)
+        {
+            if(filterDTO is null)
+            {
+                return BadRequest("Provide county, subcounty, ward, category id or owner id values");
+            }
+
+            var businesses = _businessService.FilterBusinesses(filterDTO);
+
+            return Ok(businesses);
+        }
+
         [HttpGet("{id}")]
         [ProducesResponseType(200)]
         [ProducesResponseType(404)]
