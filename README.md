@@ -16,3 +16,7 @@ This project provides a backend API solution that streamlines the onboarding pro
 - `Data`: Contains the dbContext, mapping C# entities to the database.
 - `Services`: Interfaces that bridge controllers and the database.
 - `Migrations`: Holds migration files for database updates.
+
+The diagram below shows the database design for the project
+
+![DDD-0](https://github.com/frankiemutiso/JamboPayCustomerManagementSolution/assets/66528095/3b80b804-e1a4-4466-8ed5-d3e5bdd65f6a)
