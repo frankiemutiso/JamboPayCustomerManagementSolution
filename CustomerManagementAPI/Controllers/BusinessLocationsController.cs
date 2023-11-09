@@ -35,7 +35,7 @@ namespace CustomerManagementAPI.Controllers
                 return BadRequest("Provide county, subcounty or ward values as query parameters");
             }
 
-            var locations = _businessLocationService.FilterLocations(filter);
+            var locations = _businessLocationService.FilterLocationsAsync(filter);
 
             return Ok(locations);
         }

@@ -7,9 +7,9 @@ namespace CustomerManagementAPI.DTOs
 		{
 		}
 
-		public string County { get; set; }
-		public string SubCounty { get; set; }
-		public string Ward { get; set; }
+		public string? County { get; set; }
+		public string? SubCounty { get; set; }
+		public string? Ward { get; set; }
 	}
 }
 

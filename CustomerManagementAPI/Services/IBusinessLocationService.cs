@@ -7,7 +7,7 @@ namespace CustomerManagementAPI.Services
     {
         Task<BusinessLocationReadDTO?> GetLocation(int id);
         Task<List<BusinessLocationReadDTO>> GetAllLocations();
-        List<BusinessLocationReadDTO> FilterLocations(BusinessLocationFilterDTO filterDTO);
+        List<BusinessLocationReadDTO> FilterLocationsAsync(BusinessLocationFilterDTO filterDTO);
         Task CreateLocation(BusinessLocationCreateDTO dto);
         Task<BusinessLocationReadDTO?> UpdateLocation(int id, BusinessLocationUpdateDTO dto);
         Task<bool?> DeleteLocation(int id);

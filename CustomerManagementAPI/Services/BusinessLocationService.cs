@@ -62,23 +62,23 @@ namespace CustomerManagementAPI.Services
             return new BusinessLocationReadDTO(location);
         }
 
-        public List<BusinessLocationReadDTO> FilterLocations(BusinessLocationFilterDTO filterDTO)
+        public List<BusinessLocationReadDTO> FilterLocationsAsync(BusinessLocationFilterDTO filterDTO)
         {
             var locations = _applicationDContext.BusinessLocations.Where(x => x.DateDeleted == null);
 
             if(filterDTO.County != null)
             {
-                locations.Where(x => x.County == filterDTO.County);
+                locations = locations.Where(x => x.County.ToLower() == filterDTO.County.ToLower());
             }
 
             if (filterDTO.SubCounty != null)
             {
-                locations.Where(x => x.County == filterDTO.SubCounty);
+                locations = locations.Where(x => x.County.ToLower() == filterDTO.SubCounty.ToLower());
             }
 
             if (filterDTO.Ward != null)
             {
-                locations.Where(x => x.Ward == filterDTO.Ward);
+                locations = locations.Where(x => x.Ward.ToLower() == filterDTO.Ward.ToLower());
             }
 
             return locations.Select(x => new BusinessLocationReadDTO(x)).ToList();
